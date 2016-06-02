@@ -67,7 +67,7 @@ bool_t keccakBench0()
 		ticks = tmTicks() - ticks;
 		printf("keccak1600_256:   %3u cycles / byte [%5u kBytes / sec]\n",
 			(unsigned)(ticks / data_size / reps),
-			(unsigned)tmSpeed(reps, ticks));
+			(unsigned)tmSpeed(reps * data_size / 1024, ticks));
 		// эксперимент c keccak1600_384
 		KeccakP1600_Initialize((void *) keccak_state_aligned);
 		data_block_lanes = 13;
@@ -79,7 +79,7 @@ bool_t keccakBench0()
 		ticks = tmTicks() - ticks;
 		printf("keccak1600_384:   %3u cycles / byte [%5u kBytes / sec]\n",
 			(unsigned)(ticks / data_size / reps),
-			(unsigned)tmSpeed(reps, ticks));
+			(unsigned)tmSpeed(reps * data_size / 1024, ticks));
 		// эксперимент c keccak1600_512
 		KeccakP1600_Initialize((void *) keccak_state_aligned);
 		data_block_lanes = 9;
@@ -91,7 +91,7 @@ bool_t keccakBench0()
 		ticks = tmTicks() - ticks;
 		printf("keccak1600_512:   %3u cycles / byte [%5u kBytes / sec]\n",
 			(unsigned)(ticks / data_size / reps),
-			(unsigned)tmSpeed(reps, ticks));
+			(unsigned)tmSpeed(reps * data_size / 1024, ticks));
 	}
 	// все нормально
 	return TRUE;
