@@ -1,0 +1,4 @@
+Keccak benchmarking, done in style of the bee2 library.
+
+Keccak implementation is taken from https://github.com/gvanas/KeccakCodePackage and added as a submodule.
+Bee2 library is taken from https://github.com/bcrypto/bee2 or https://github.com/agievich/bee2 and added as an external dependency.
